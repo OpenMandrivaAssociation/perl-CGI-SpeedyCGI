@@ -1,7 +1,7 @@
 %define module	CGI-SpeedyCGI
 %define name	perl-%{module}
 %define version	2.22
-%define	release	%mkrel 3
+%define	release	%mkrel 5
 
 Name:		%{name}
 Version:	%{version}
