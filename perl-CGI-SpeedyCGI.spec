@@ -9,7 +9,7 @@
 Summary:        Speed up perl scripts by running them persistently
 Name:           perl-%{module}
 Version:        2.22
-Release:        %mkrel 6
+Release:        %mkrel 7
 License:        GPLv3+
 Group:          Development/Perl
 URL:		http://search.cpan.org/dist/%{module}
