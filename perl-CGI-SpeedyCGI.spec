@@ -25,6 +25,7 @@ BuildRequires:	perl-devel
 BuildRequires:	perl(ExtUtils::MakeMaker)
 BuildRequires:	perl(ExtUtils::Embed)
 BuildRequires:	apache-devel >= %{apache_version}
+BuildRequires:	apache-mpm-prefork
 BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}-buildroot
 
 %description
