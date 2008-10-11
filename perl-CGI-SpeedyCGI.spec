@@ -21,11 +21,11 @@ Patch2:		perl-CGI-SpeedyCGI-2.22-strerror.patch
 Patch3:		perl-CGI-SpeedyCGI-2.22-brigade_foreach.patch
 Patch4:		perl-CGI-SpeedyCGI-2.22-exit_messages.patch
 Patch5:		perl-CGI-SpeedyCGI-2.22-perl_510.patch
+Patch6:		perl-CGI-SpeedyCGI-2.22-force-apache2.patch
 BuildRequires:	perl-devel
 BuildRequires:	perl(ExtUtils::MakeMaker)
 BuildRequires:	perl(ExtUtils::Embed)
 BuildRequires:	apache-devel >= %{apache_version}
-BuildRequires:	apache-mpm-prefork
 BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}-buildroot
 
 %description
@@ -66,6 +66,7 @@ scripts for web application persistently to make them more quickly.
 %patch3 -p1 -b .brigade_foreach
 %patch4 -p1 -b .exit_messages
 %patch5 -p1 -b .perl_510
+%patch6 -p1 -b .apache2
 
 cp %{SOURCE1} %{mod_conf}
 
