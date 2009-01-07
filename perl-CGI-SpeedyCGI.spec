@@ -1,3 +1,5 @@
+%define Werror_cflags %{nil}
+
 #Module-Specific definitions
 %define apache_version 2.2.9
 %define mod_name mod_speedycgi
@@ -9,7 +11,7 @@
 Summary:        Speed up perl scripts by running them persistently
 Name:           perl-%{module}
 Version:        2.22
-Release:        %mkrel 7
+Release:        %mkrel 8
 License:        GPLv3+
 Group:          Development/Perl
 URL:		http://search.cpan.org/dist/%{module}
@@ -78,7 +80,7 @@ sed -i 's@apxs -@%{_sbindir}/apxs -@g' Makefile.PL src/SpeedyMake.pl \
 sed -i 's@APXS=apxs@APXS=%{_sbindir}/apxs@g' mod_speedycgi/Makefile.tmpl
 
 echo yes | perl Makefile.PL INSTALLDIRS=vendor
-make OPTIMIZE="$CFLAGS"
+make OPTIMIZE="$CFLAGS" LDFLAGS="%{ldflags}"
 
 #check
 ##- this test does not work with 5.8.7.
