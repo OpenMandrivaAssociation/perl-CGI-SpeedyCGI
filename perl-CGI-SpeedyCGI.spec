@@ -1,3 +1,6 @@
+%define upstream_name	 CGI-SpeedyCGI
+%define upstream_version 2.22
+
 %define Werror_cflags %{nil}
 
 #Module-Specific definitions
@@ -6,16 +9,15 @@
 %define mod_conf B49_%{mod_name}.conf
 %define mod_so %{mod_name}.so
 
-%define module	CGI-SpeedyCGI
+Name:       perl-%{upstream_name}
+Version:    %perl_convert_version %{upstream_version}
+Release:    %mkrel 1
 
-Summary:        Speed up perl scripts by running them persistently
-Name:           perl-%{module}
-Version:        2.22
-Release:        %mkrel 8
-License:        GPLv3+
-Group:          Development/Perl
-URL:		http://search.cpan.org/dist/%{module}
-Source0:	http://www.cpan.org/modules/by-authors/id/H/HO/HORROCKS/%{module}-%{version}.tar.gz
+Summary:    Speed up perl scripts by running them persistently
+License:    GPLv3+
+Group:      Development/Perl
+Url:		http://search.cpan.org/dist/%{upstream_name}
+Source0:	http://www.cpan.org/modules/by-authors/id/H/HO/HORROCKS/%{upstream_name}-%{upstream_version}.tar.gz
 Source1:	%{mod_conf}
 Patch0:		perl-CGI-SpeedyCGI-2.22-documentation.patch
 Patch1:		perl-CGI-SpeedyCGI-2.22-empty_param.patch
@@ -24,11 +26,12 @@ Patch3:		perl-CGI-SpeedyCGI-2.22-brigade_foreach.patch
 Patch4:		perl-CGI-SpeedyCGI-2.22-exit_messages.patch
 Patch5:		perl-CGI-SpeedyCGI-2.22-perl_510.patch
 Patch6:		perl-CGI-SpeedyCGI-2.22-force-apache2.patch
+
 BuildRequires:	perl-devel
 BuildRequires:	perl(ExtUtils::MakeMaker)
 BuildRequires:	perl(ExtUtils::Embed)
 BuildRequires:	apache-devel >= %{apache_version}
-BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}-buildroot
+BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}
 
 %description
 SpeedyCGI is a way to run perl scripts persistently, which can make them run
@@ -60,8 +63,7 @@ The SpeedyCGI module for the Apache HTTP Server. It can be used to run perl
 scripts for web application persistently to make them more quickly.
 
 %prep
-
-%setup -q -n %{module}-%{version}
+%setup -q -n %{upstream_name}-%{upstream_version}
 %patch0 -p1 -b .documentation
 %patch1 -p1 -b .empty_param
 %patch2 -p1 -b .strerror
