@@ -1,0 +1,15 @@
+diff -Naur --exclude '*~' CGI-SpeedyCGI-2.22/src/SpeedyMake.pl CGI-SpeedyCGI-2.22-force-apache2/src/SpeedyMake.pl
+--- CGI-SpeedyCGI-2.22/src/SpeedyMake.pl	2003-10-12 02:45:06.000000000 +0200
++++ CGI-SpeedyCGI-2.22-force-apache2/src/SpeedyMake.pl	2008-10-11 20:21:47.000000000 +0200
+@@ -373,11 +373,7 @@
+ }
+ 
+ sub httpd_version {
+-    my $httpd = &find_httpd;
+-    if (`$httpd -v 2>/dev/null` =~ /Apache.2/) {
+ 	return 2;
+-    }
+-    return 1;
+ }
+ 
+ sub find_httpd {
