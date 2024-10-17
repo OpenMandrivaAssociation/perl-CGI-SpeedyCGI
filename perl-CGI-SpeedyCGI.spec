@@ -16,7 +16,7 @@ Release:	6
 Summary:	Speed up perl scripts by running them persistently
 License:	GPLv3+
 Group:		Development/Perl
-Url:		http://search.cpan.org/dist/%{upstream_name}
+Url:		https://search.cpan.org/dist/%{upstream_name}
 Source0:	http://www.cpan.org/modules/by-authors/id/H/HO/HORROCKS/%{upstream_name}-%{upstream_version}.tar.gz
 Source1:	%{mod_conf}
 Patch0:		perl-CGI-SpeedyCGI-2.22-documentation.patch
