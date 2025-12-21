@@ -27,6 +27,7 @@ Patch4:		perl-CGI-SpeedyCGI-2.22-exit_messages.patch
 Patch5:		perl-CGI-SpeedyCGI-2.22-perl_510.patch
 Patch6:		perl-CGI-SpeedyCGI-2.22-force-apache2.patch
 
+BuildRequires:	make
 BuildRequires:	perl-devel
 BuildRequires:	perl(ExtUtils::MakeMaker)
 BuildRequires:	perl(ExtUtils::Embed)
