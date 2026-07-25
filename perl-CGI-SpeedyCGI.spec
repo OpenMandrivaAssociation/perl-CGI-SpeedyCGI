@@ -10,14 +10,14 @@
 %define mod_so %{mod_name}.so
 
 Name:		perl-%{upstream_name}
-Version:	%perl_convert_version %{upstream_version}
-Release:	6
+Version:	%{upstream_version}
+Release:	7
 
 Summary:	Speed up perl scripts by running them persistently
 License:	GPLv3+
 Group:		Development/Perl
-Url:		https://search.cpan.org/dist/%{upstream_name}
-Source0:	http://www.cpan.org/modules/by-authors/id/H/HO/HORROCKS/%{upstream_name}-%{upstream_version}.tar.gz
+Url:		https://metacpan.org/dist/CGI-SpeedyCGI
+Source0:	https://cpan.metacpan.org/authors/id/H/HO/HORROCKS/CGI-SpeedyCGI-%{upstream_version}.tar.gz
 Source1:	%{mod_conf}
 Patch0:		perl-CGI-SpeedyCGI-2.22-documentation.patch
 Patch1:		perl-CGI-SpeedyCGI-2.22-empty_param.patch
