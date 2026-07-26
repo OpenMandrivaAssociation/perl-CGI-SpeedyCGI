@@ -1,6 +1,4 @@
 %define upstream_name	 CGI-SpeedyCGI
-%define upstream_version 2.22
-
 %define Werror_cflags %{nil}
 
 #Module-Specific definitions
@@ -10,14 +8,14 @@
 %define mod_so %{mod_name}.so
 
 Name:		perl-%{upstream_name}
-Version:	%{upstream_version}
-Release:	7
+Version:	2.22
+Release:	8
 
 Summary:	Speed up perl scripts by running them persistently
 License:	GPLv3+
 Group:		Development/Perl
 Url:		https://metacpan.org/dist/CGI-SpeedyCGI
-Source0:	https://cpan.metacpan.org/authors/id/H/HO/HORROCKS/CGI-SpeedyCGI-%{upstream_version}.tar.gz
+Source0:	https://cpan.metacpan.org/authors/id/H/HO/HORROCKS/CGI-SpeedyCGI-%{version}.tar.gz
 Source1:	%{mod_conf}
 Patch0:		perl-CGI-SpeedyCGI-2.22-documentation.patch
 Patch1:		perl-CGI-SpeedyCGI-2.22-empty_param.patch
@@ -63,7 +61,7 @@ The SpeedyCGI module for the Apache HTTP Server. It can be used to run perl
 scripts for web application persistently to make them more quickly.
 
 %prep
-%setup -q -n %{upstream_name}-%{upstream_version}
+%setup -q -n %{upstream_name}-%{version}
 %patch0 -p1 -b .documentation
 %patch1 -p1 -b .empty_param
 %patch2 -p1 -b .strerror
@@ -131,9 +129,7 @@ fi
 
 * Sat Aug 01 2009 Jérôme Quelin <jquelin@mandriva.org> 2.220.0-1mdv2011.0
 + Revision: 406870
-- rebuild using %%perl_convert_version
-
-* Wed Jan 07 2009 Oden Eriksson <oeriksson@mandriva.com> 2.22-8mdv2009.1
+- rebuild using %2.22 Wed Jan 07 2009 Oden Eriksson <oeriksson@mandriva.com> 2.22-8mdv2009.1
 + Revision: 326701
 - rebuild
 
